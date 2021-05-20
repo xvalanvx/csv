@@ -11,16 +11,16 @@ for root, _, files in os.walk("C:/Users/alan8/Desktop/hydro_logs/"):
         if "fuzzy_result" in name:
             i = i + 1
             filename = os.path.join(name)
-            peko = os.path.join(root, name)
-            ina = os.path.join(root, str(i) + '.csv')
-            os.rename(peko, ina)
-            print(peko)
-            print(filename)
-            source = peko
-            destination = r'C:/Users/alan8/Desktop/hydro_logs/all'
-            shutil.copy(ina,destination)
+            peko = os.path.join(root, name) #舊的檔案名稱+位置
+            ina = os.path.join(root, str(i) + '.csv') #新的檔案名稱+位置
+            os.rename(peko, ina) #重新命名檔案讓他照順序排
+            #print(peko)
+            #print(filename)
+            source = peko #複製的檔案原始地
+            destination = r'C:/Users/alan8/Desktop/hydro_logs/all' #複製的檔案目標地
+            shutil.copy(ina,destination) #複製檔案到指定地點
             
-Path = r'C:/Users/alan8/Desktop/hydro_logs/all/'          #要拼接的資料夾及其完整路徑，注意不要包含中文
+Path = r'C:/Users/alan8/Desktop/hydro_logs/all/'          #要拼接的資料夾及其完整路徑
 SaveFile_Path = r'C:/Users/alan8/Desktop/hydro_logs/all/'       #拼接後要儲存的檔案路徑
 SaveFile_Name = r'all.csv'              #合併後要儲存的檔名
 
